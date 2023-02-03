@@ -1,0 +1,53 @@
+# Set up a simple chain of commits and print specific UID using commit message.
+I definitions.inc
+I commit_setup.inc
+#Commits
+> branch test
+<<<
+> checkout test
+<<<
++ wug3.txt wug.txt
++ wug.txt notwug.txt
+> add wug3.txt
+<<<
+> add wug.txt
+<<<
+> commit "added wug3 modified wug"
+<<<
+> checkout master
+<<<
++ wug4.txt wug.txt
+> add wug4.txt
+<<<
+> commit "added wug4"
+<<<
++ wug.txt notnotwug.txt
+> add wug.txt
+<<<
+> commit "modified wug"
+<<<
+#log
+> global-log
+${COMMIT_LOG}
+<<<*
+# merge
+> merge test
+${ARBLINES}
+<<<*
+> status
+=== Branches ===
+*master
+test
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+> log
+${COMMIT_LOG}
+<<<*

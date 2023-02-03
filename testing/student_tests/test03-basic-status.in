@@ -1,0 +1,32 @@
+# Set up a simple chain of commits and print specific UID using commit message.
+I definitions.inc
+I commit_setup.inc
+#Modifications
+#Staged
++ wug3.txt wug.txt
+> add wug3.txt
+<<<
+#Removed
+> rm wug2.txt
+<<<
+#MNSFC
++ wug.txt notwug.txt
+#Untracked
++ wug4.txt wug.txt
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+wug3.txt
+
+=== Removed Files ===
+wug2.txt
+
+=== Modifications Not Staged For Commit ===
+wug.txt (modified)
+
+=== Untracked Files ===
+wug4.txt
+
+<<<
